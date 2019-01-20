@@ -5,6 +5,7 @@
 	<groupId>com.ps</groupId>
 	<artifactId>spring_sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<description>Following along with Spring Fundamentals course...</description>
 	<build>
 		<plugins>
 			<plugin>
@@ -18,5 +19,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<description>Following along with Spring Fundamentals course...</description>
 </project>
