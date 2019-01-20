@@ -5,8 +5,12 @@ import java.util.List;
 
 import com.ps.model.Customer;
 
-public class HibernateCustomerRepositoryImpl {
+public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 	
+	/* (non-Javadoc)
+	 * @see com.ps.repository.CustomerRepository#findAll()
+	 */
+	@Override
 	public List<Customer> findAll(){
 		List<Customer> customerList = new ArrayList<Customer>();
 		
