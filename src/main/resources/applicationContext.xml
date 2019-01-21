@@ -10,6 +10,8 @@
 		
 		<context:annotation-config />
 		<context:component-scan base-package="com.ps" />
+<!-- 		using the annotation config, component scan, & @annotations -->
+<!-- 		we can designate instance associations/dependencies throughtout the application -->
 
 
 </beans>
