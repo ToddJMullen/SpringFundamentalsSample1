@@ -8,6 +8,10 @@ import com.ps.repository.CustomerRepository;
 public class CustomerServiceImpl implements CustomerService {
 
 	private CustomerRepository customerRepo;
+	
+	public CustomerServiceImpl( CustomerRepository customerRepo ) {
+		this.customerRepo = customerRepo;
+	}
 
 	@Override
 	public List<Customer> findAll() {
