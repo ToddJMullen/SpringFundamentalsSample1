@@ -7,10 +7,11 @@
 		class="com.ps.repository.HibernateCustomerRepositoryImpl" />
 		
 	<bean name="customerService"
-		class="com.ps.service.CustomerServiceImpl" >
+		class="com.ps.service.CustomerServiceImpl"
+		autowire="constructor" >
 <!-- 		<property name="customerRepository" ref="customerRepository"></property> -->
 <!-- 		^^^^ setter injection property used to define the value to be used -->
-			<constructor-arg index="0" ref="customerRepository"></constructor-arg>
+<!-- 			<constructor-arg index="0" ref="customerRepository"></constructor-arg> -->
 <!-- 			cnstructor injection is index based, so index determins arg # -->
 <!-- 			both injection methods (child tags) can be used at the same time -->
 	</bean>
