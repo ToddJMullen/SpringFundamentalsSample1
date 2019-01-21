@@ -9,6 +9,8 @@
 	<bean name="customerService"
 		class="com.ps.service.CustomerServiceImpl"
 		autowire="byType" >
+<!-- 		autowire="byType" will look for a parameter that matches the type to be injected -->
+<!-- 		autowire="byName" will look for the method to call based on the set{PropertyName} convention"" -->
 <!-- 		<property name="customerRepository" ref="customerRepository"></property> -->
 <!-- 		^^^^ setter injection property used to define the value to be used -->
 <!-- 			<constructor-arg index="0" ref="customerRepository"></constructor-arg> -->
