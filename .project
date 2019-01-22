@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
-	<name>spring_sample_xml</name>
-=======
-	<name>spring_sample_xml_annot</name>
->>>>>>> refs/remotes/origin/rev-3-autowiring
+	<name>spring_sample</name>
 	<comment></comment>
 	<projects>
 	</projects>
