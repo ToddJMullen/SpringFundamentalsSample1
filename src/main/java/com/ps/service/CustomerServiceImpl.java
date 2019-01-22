@@ -25,6 +25,9 @@ public class CustomerServiceImpl implements CustomerService {
 		System.out.println("Instantiating CustomerServiceImpl() with customer repo:\n " + customerRepo.getClass() );
 		this.customerRepo = customerRepo;
 	}
+	//All the @Autowired annotations here are enabled via
+	// <context:annotation-config /> & <context:component-scan /> in applicationContext.xml
+	// those are enable/added in applicationContext.xml by adding the Spring Context namespace(s)
 	
 	
 //	@Autowired
