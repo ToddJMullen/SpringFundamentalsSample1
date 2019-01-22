@@ -12,7 +12,7 @@ import com.ps.repository.CustomerRepository;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
-//	@Autowired
+//	@Autowired //<< member injectino 
 	private CustomerRepository customerRepo;//	 = new HibernateCustomerRepositoryImpl();
 	//note that this is still using the hard wired dependency bc this rev was started
 	//on the base started sample (rev 1) "spring_sample" & hence the "poor" example code is the start
@@ -30,7 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
 	// those are enable/added in applicationContext.xml by adding the Spring Context namespace(s)
 	
 	
-//	@Autowired
+//	@Autowired // << setter injection
 	public void setCustomerRepo(CustomerRepository customerRepo) {
 		System.out.println("setCutomerRepo() called for setter injection with:\n " + customerRepo.getClass() );
 		this.customerRepo = customerRepo;
