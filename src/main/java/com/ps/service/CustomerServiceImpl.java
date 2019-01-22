@@ -20,9 +20,16 @@ public class CustomerServiceImpl implements CustomerService {
 	//to provide the CustomerRepository instance that should be used (as in rev 2 "spring_sample_xml").
 	//In rev 3, we will use autowiring/annotations to decouple the Repo instance as the preferred method
 	
-	@Autowired
+	@Autowired//Mark constructor for DI
+	public CustomerServiceImpl( CustomerRepository customerRepo ) {
+		System.out.println("Instantiating CustomerServiceImpl() with customer repo:\n " + customerRepo.getClass() );
+		this.customerRepo = customerRepo;
+	}
+	
+	
+//	@Autowired
 	public void setCustomerRepo(CustomerRepository customerRepo) {
-		System.out.println("setCutomerRepo() called for setter injection with " + customerRepo.getClass() );
+		System.out.println("setCutomerRepo() called for setter injection with:\n " + customerRepo.getClass() );
 		this.customerRepo = customerRepo;
 	}
 	//this ^^^ member injection method of configuring autowiring is basically the same as would be done w/o Spring
