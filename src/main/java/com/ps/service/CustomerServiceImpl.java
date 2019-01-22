@@ -9,7 +9,7 @@ import com.ps.model.Customer;
 import com.ps.repository.CustomerRepository;
 //import com.ps.repository.HibernateCustomerRepositoryImpl;
 
-@Service("customerService")
+@Service("customerService")// << stereotype annotation
 public class CustomerServiceImpl implements CustomerService {
 
 //	@Autowired //<< member injectino 

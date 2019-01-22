@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ps.model.Customer;
 
-@Repository("customerRepo")//<< identifies this repo bean
+@Repository("customerRepo")//<< stereotype annotation identifies this repo bean
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 	
 	/* (non-Javadoc)
