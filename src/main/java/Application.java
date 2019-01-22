@@ -1,5 +1,6 @@
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+//import org.springframework.context.support.ClassPathXmlApplicationContext;//<< replaced with AppConfig
 
 import com.ps.service.CustomerService;
 
@@ -9,7 +10,11 @@ public class Application {
 		
 //		CustomerService service = new CustomerServiceImpl();
 		
-		ApplicationContext appCtx = new ClassPathXmlApplicationContext("applicationContext.xml");
+//		ApplicationContext appCtx = new ClassPathXmlApplicationContext("applicationContext.xml");
+		// ^^^ used for the autowiring/XML approach
+		
+		ApplicationContext appCtx = new AnnotationConfigApplicationContext(AppConfig.class);
+		//Change app ctx to use the AppConfig implementation
 		
 		CustomerService service = appCtx.getBean("customerService", CustomerService.class );
 		

@@ -20,24 +20,30 @@ public class CustomerServiceImpl implements CustomerService {
 	//to provide the CustomerRepository instance that should be used (as in rev 2 "spring_sample_xml").
 	//In rev 3, we will use autowiring/annotations to decouple the Repo instance as the preferred method
 	
-	@Autowired//Mark constructor for DI
-	public CustomerServiceImpl( CustomerRepository customerRepo ) {
-		System.out.println("CustomerServiceImpl() injected with repo instance of:\n " + customerRepo.getClass() );
-		this.customerRepo = customerRepo;
-	}
+//	@Autowired//Mark constructor for DI
+//	public CustomerServiceImpl( CustomerRepository customerRepo ) {
+//		System.out.println("CustomerServiceImpl() injected with repo instance of:\n " + customerRepo.getClass() );
+//		this.customerRepo = customerRepo;
+//	}
+	
+	//Using the AppConfig.java, we are not using ANY of the autowiring, but using setters
+	
+	
 	//All the @Autowired annotations here are enabled via
 	// <context:annotation-config /> & <context:component-scan /> in applicationContext.xml
 	// those are enable/added in applicationContext.xml by adding the Spring Context namespace(s)
 	
 	
 //	@Autowired // << setter injection
-	public void setCustomerRepo(CustomerRepository customerRepo) {
+	public void setCustomerRepository(CustomerRepository customerRepo) {
 		System.out.println("setCutomerRepo() called for setter injection with:\n " + customerRepo.getClass() );
 		this.customerRepo = customerRepo;
 	}
 	//this ^^^ member injection method of configuring autowiring is basically the same as would be done w/o Spring
 	//both methods can be used & may be considered a matter of preference
 	//by providing this explicit setter with the @Autowired, Spring knows that DI is being requested by type here
+	
+	//Note: we have no getter because we have no need for it here
 
 	/* (non-Javadoc)
 	 * @see com.ps.service.CustomerService#findAll()
