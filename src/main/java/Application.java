@@ -11,7 +11,7 @@ public class Application {
 		
 		ApplicationContext appCtx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		CustomerService service = appCtx.getBean("customerService", CustomerService.class);
+		CustomerService service = appCtx.getBean("customerService", CustomerService.class );
 		
 		System.out.println( service.findAll().get(0).getNameFirst() );
 

@@ -3,8 +3,11 @@ package com.ps.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.ps.model.Customer;
 
+@Repository("customerRepo")//<< identifies this repo bean
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 	
 	/* (non-Javadoc)

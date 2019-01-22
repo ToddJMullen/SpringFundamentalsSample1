@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean name="customerRepository"
-		class="com.ps.repository.HibernateCustomerRepositoryImpl" />
+<!-- 	<bean name="customerRepository" -->
+<!-- 		class="com.ps.repository.HibernateCustomerRepositoryImpl" /> -->
 		
-	<bean name="customerService"
-		class="com.ps.service.CustomerServiceImpl"
-		autowire="byType" >
+<!-- 	<bean name="customerService" -->
+<!-- 		class="com.ps.service.CustomerServiceImpl" -->
+<!-- 		autowire="byType" > -->
 <!-- 		autowire="byType" will look for a parameter that matches the type to be injected -->
 <!-- 		autowire="byName" will look for the method to call based on the set{PropertyName} convention"" -->
 <!-- 		<property name="customerRepository" ref="customerRepository"></property> -->
@@ -16,6 +13,21 @@
 <!-- 			<constructor-arg index="0" ref="customerRepository"></constructor-arg> -->
 <!-- 			cnstructor injection is index based, so index determins arg # -->
 <!-- 			both injection methods (child tags) can be used at the same time -->
-	</bean>
+<!-- 	</bean> -->
+
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+		
+		<context:annotation-config />
+		<context:component-scan base-package="com.ps" />
+<!-- 		using the annotation config, component scan, & @annotations -->
+<!-- 		we can designate instance associations/dependencies throughtout the application -->
+
 
 </beans>
