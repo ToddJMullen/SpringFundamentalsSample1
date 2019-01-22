@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired//Mark constructor for DI
 	public CustomerServiceImpl( CustomerRepository customerRepo ) {
-		System.out.println("Instantiating CustomerServiceImpl() with customer repo:\n " + customerRepo.getClass() );
+		System.out.println("CustomerServiceImpl() injected with repo instance of:\n " + customerRepo.getClass() );
 		this.customerRepo = customerRepo;
 	}
 	//All the @Autowired annotations here are enabled via
