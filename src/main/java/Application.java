@@ -18,6 +18,12 @@ public class Application {
 		
 		CustomerService service = appCtx.getBean("customerService", CustomerService.class );
 		
+		System.out.println(service);//dump instance address
+		
+		CustomerService service2 = appCtx.getBean("customerService", CustomerService.class );
+
+		System.out.println(service2);//should be same as service
+		
 		System.out.println( service.findAll().get(0).getNameFirst() );
 
 	}
