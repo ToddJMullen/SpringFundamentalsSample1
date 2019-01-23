@@ -9,8 +9,12 @@ public class CustomerServiceImpl implements CustomerService {
 
 	private CustomerRepository customerRepo;
 	
-	public CustomerServiceImpl( CustomerRepository customerRepo ) {
-		this.customerRepo = customerRepo;
+	public CustomerServiceImpl() {
+		
+	}
+	
+	public CustomerServiceImpl( CustomerRepository customerRepository ) {
+		this.customerRepo = customerRepository;
 	}
 
 	@Override
@@ -19,6 +23,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public void setCustomerRepo(CustomerRepository customerRepo) {
+		System.out.println("setCustomerRepo() Setting customer repo: " + customerRepo );
 		this.customerRepo = customerRepo;
 	}
 
