@@ -8,14 +8,17 @@
 		
 	<bean name="customerService"
 		class="com.ps.service.CustomerServiceImpl"
-		autowire="byType" >
-<!-- 		autowire="byType" will look for a parameter that matches the type to be injected -->
-<!-- 		autowire="byName" will look for the method to call based on the set{PropertyName} convention"" -->
-<!-- 		<property name="customerRepository" ref="customerRepository"></property> -->
-<!-- 		^^^^ setter injection property used to define the value to be used -->
-<!-- 			<constructor-arg index="0" ref="customerRepository"></constructor-arg> -->
-<!-- 			cnstructor injection is index based, so index determins arg # -->
-<!-- 			both injection methods (child tags) can be used at the same time -->
+		autowire="byType"
+		scope="prototype" >
+<!-- 	Beans use singleton by default, but it can be set explicitly here -->
+<!-- 	here we've set as prototype to use the logs in Application.java to see that it creates a new instance every time -->
+<!-- 	autowire="byType" will look for a parameter that matches the type to be injected -->
+<!-- 	autowire="byName" will look for the method to call based on the set{PropertyName} convention"" -->
+<!-- 	<property name="customerRepository" ref="customerRepository"></property> -->
+<!-- 	^^^^ setter injection property used to define the value to be used -->
+<!-- 	<constructor-arg index="0" ref="customerRepository"></constructor-arg> -->
+<!-- 	constructor injection is index based, so index determins arg # -->
+<!-- 	both injection methods (child tags) can be used at the same time -->
 	</bean>
 
 </beans>
