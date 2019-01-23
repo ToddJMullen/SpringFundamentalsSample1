@@ -14,21 +14,21 @@ import com.ps.service.CustomerServiceImpl;
 @ComponentScan({"com.ps"})//Activate scanning to autowire in the com.ps package
 public class AppConfig {
 
-	@Bean(name = "customerService")
-	public CustomerService getCustomerService() {
-		//we do not need to cache the result, 
-		//Spring automatically provides lazy loaded Singletons via @Bean
-//		CustomerServiceImpl service = new CustomerServiceImpl( getCustomerRepository());
-		CustomerServiceImpl service = new CustomerServiceImpl();
-		// not sure why he's using setter instead, will follow suite though
-//		service.setCustomerRepository(getCustomerRepository());//replaced with contructor DI
-		return service;
-	}
+//	@Bean(name = "customerService")
+//	public CustomerService getCustomerService() {
+//		//we do not need to cache the result, 
+//		//Spring automatically provides lazy loaded Singletons via @Bean
+////		CustomerServiceImpl service = new CustomerServiceImpl( getCustomerRepository());
+//		CustomerServiceImpl service = new CustomerServiceImpl();
+//		// not sure why he's using setter instead, will follow suite though
+////		service.setCustomerRepository(getCustomerRepository());//replaced with contructor DI
+//		return service;
+//	}
 	
-	@Bean(name = "customerRepository")
-	public CustomerRepository getCustomerRepository() {
-		return new HibernateCustomerRepositoryImpl();
-	}
+//	@Bean(name = "customerRepository")
+//	public CustomerRepository getCustomerRepository() {
+//		return new HibernateCustomerRepositoryImpl();
+//	}
 	
 	
 }//AppConfig
