@@ -21,10 +21,10 @@ public class CustomerServiceImpl implements CustomerService {
 	//In rev 3, we will use autowiring/annotations to decouple the Repo instance as the preferred method
 	
 //	@Autowired//Mark constructor for DI
-//	public CustomerServiceImpl( CustomerRepository customerRepo ) {
-//		System.out.println("CustomerServiceImpl() injected with repo instance of:\n " + customerRepo.getClass() );
-//		this.customerRepo = customerRepo;
-//	}
+	public CustomerServiceImpl( CustomerRepository customerRepo ) {
+		System.out.println("CustomerServiceImpl() contructor injected with repo instance of:\n " + customerRepo.getClass() );
+		this.customerRepo = customerRepo;
+	}
 	
 	//Using the AppConfig.java, we are not using ANY of the autowiring, but using setters
 	
@@ -35,10 +35,10 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	
 //	@Autowired // << setter injection
-	public void setCustomerRepository(CustomerRepository customerRepo) {
-		System.out.println("setCutomerRepo() called for setter injection with:\n " + customerRepo.getClass() );
-		this.customerRepo = customerRepo;
-	}
+//	public void setCustomerRepository(CustomerRepository customerRepo) {
+//		System.out.println("setCutomerRepo() called for setter injection with:\n " + customerRepo.getClass() );
+//		this.customerRepo = customerRepo;
+//	}//setter not used now bc we moved to contructor
 	//this ^^^ member injection method of configuring autowiring is basically the same as would be done w/o Spring
 	//both methods can be used & may be considered a matter of preference
 	//by providing this explicit setter with the @Autowired, Spring knows that DI is being requested by type here

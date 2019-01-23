@@ -14,10 +14,11 @@ public class AppConfig {
 
 	@Bean(name = "customerService")
 	public CustomerService getCustomerService() {
-//		CustomerServiceImpl = new CustomerServiceImpl( getCustomerRepository() );
+		//we do not need to cache the result, 
+		//Spring automatically provides lazy loaded Singletons via @Bean
+		CustomerServiceImpl service = new CustomerServiceImpl( getCustomerRepository());
 		// not sure why he's using setter instead, will follow suite though
-		CustomerServiceImpl service = new CustomerServiceImpl();
-		service.setCustomerRepository(getCustomerRepository());
+//		service.setCustomerRepository(getCustomerRepository());//replaced with contructor DI
 		return service;
 	}
 	
