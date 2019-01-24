@@ -18,6 +18,11 @@ public class Application {
 		
 		CustomerService service = appCtx.getBean("customerService", CustomerService.class );
 		
+		System.out.println("Fetched service instance:" + service );
+		
+		CustomerService service2 = appCtx.getBean("customerService", CustomerService.class );
+		System.out.println("Fetched service2 instance:" + service2 );
+		
 		System.out.println( service.findAll().get(0).getNameFirst() );
 
 	}

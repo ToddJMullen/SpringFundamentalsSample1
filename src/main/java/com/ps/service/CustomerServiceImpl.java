@@ -3,6 +3,8 @@ package com.ps.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.ps.model.Customer;
@@ -10,6 +12,7 @@ import com.ps.repository.CustomerRepository;
 //import com.ps.repository.HibernateCustomerRepositoryImpl;
 
 @Service("customerService")// << stereotype annotation
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class CustomerServiceImpl implements CustomerService {
 
 //	@Autowired //<< member injection 
