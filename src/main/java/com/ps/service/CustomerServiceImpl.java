@@ -12,7 +12,8 @@ import com.ps.repository.CustomerRepository;
 //import com.ps.repository.HibernateCustomerRepositoryImpl;
 
 @Service("customerService")// << stereotype annotation
-@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+//@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CustomerServiceImpl implements CustomerService {
 
 //	@Autowired //<< member injection 
