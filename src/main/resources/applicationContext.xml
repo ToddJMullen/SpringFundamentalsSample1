@@ -8,10 +8,14 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
 		
-	
+	<context:property-placeholder location="app.properties"/>
+<!-- 	the location is a path, but since it's in resources/ 
+	it will be placed at the root when compiled so no more path info is required -->
 
 	<bean name="customerRepository"
-		class="com.ps.repository.HibernateCustomerRepositoryImpl" />
+		class="com.ps.repository.HibernateCustomerRepositoryImpl" >
+		<property name="dbUsername" value="${dbUsername}"></property>	
+	</bean>
 		
 	<bean name="customerService"
 		class="com.ps.service.CustomerServiceImpl"
