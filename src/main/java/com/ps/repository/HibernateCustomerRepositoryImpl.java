@@ -16,6 +16,7 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 //	public void setDbUsername(String dbUsername) {
 //		this.dbUsername = dbUsername;
 //	}
+	
 
 	/* (non-Javadoc)
 	 * @see com.ps.repository.CustomerRepository#findAll()
@@ -24,6 +25,7 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 	public List<Customer> findAll(){
 		
 		System.out.println("HibernateCustomerRepositoryImpl().findAll()\ndbUsername: " + dbUsername );
+		System.out.println("dbUsername: " + dbUsername );
 		
 		List<Customer> customerList = new ArrayList<Customer>();
 		
