@@ -15,17 +15,25 @@
 <!-- 			both injection methods (child tags) can be used at the same time -->
 <!-- 	</bean> -->
 
+
 <beans
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-		http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context 
-		http://www.springframework.org/schema/context/spring-context.xsd">
-		
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+	 	http://www.springframework.org/schema/context/spring-context.xsd">
+	 	
+
+	 	
 		<context:annotation-config />
-		<context:component-scan base-package="com.ps" />
+		<context:property-placeholder location="app.properties"/>
+<!-- 		^^^ add app.properties into the app to be parsed for values -->
+<!-- 	//No error, but values are not being set via @Value() -->
+<!-- 	//Can't figure out why -->
+		
+<!-- 		<context:component-scan base-package="com.ps" /> -->
 <!-- 		using the annotation config, component scan, & @annotations -->
 <!-- 		we can designate instance associations/dependencies throughout the application -->
 <!-- 			without requiring bean definitions here for each -->
