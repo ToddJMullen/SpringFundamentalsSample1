@@ -1,6 +1,9 @@
+//import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.ps.repository.CustomerRepository;
 import com.ps.repository.HibernateCustomerRepositoryImpl;
@@ -12,7 +15,14 @@ import com.ps.service.CustomerServiceImpl;
 
 @Configuration// << mark this class as a configuration provider
 @ComponentScan({"com.ps"})//Activate scanning to autowire in the com.ps package
+@PropertySource("app.properties")
 public class AppConfig {
+	
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer
+					getPropertySourcesPlaceholderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
 
 //	@Bean(name = "customerService")
 //	public CustomerService getCustomerService() {
